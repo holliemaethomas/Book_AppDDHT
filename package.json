@@ -1,0 +1,28 @@
+{
+  "name": "book_appddht",
+  "version": "1.0.0",
+  "description": "Book App",
+  "main": "server.js",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "pg": "^7.15.1",
+    "superagent": "^5.1.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/holliemaethomas/Book_AppDDHT.git"
+  },
+  "author": "Dayne Daylong Hollie Thomas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/holliemaethomas/Book_AppDDHT/issues"
+  },
+  "homepage": "https://github.com/holliemaethomas/Book_AppDDHT#readme"
+}

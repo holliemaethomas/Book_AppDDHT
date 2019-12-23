@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="styles/layout.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>RESULTS</title>
+</head>
+<body>
+  <header>
+  <nav>
+    <span> Book APP</span>
+    <a href="/">Home</a>
+    
+  </header>
+  </nav>
+  <div id="searchResults">
+      <% books.forEach(book => { %>
+      <img src="<%= book.image_url %>">
+      <h2><%= book.title %></h2>
+      <h5>Written by <%= book.authors ? book.authors.join(', ') : 'unknown' %></h5>
+      <h4>Summery: <%= book.description %></h4>
+        
+          <% }) %>
+ 
+</body>
+</html>
+<!-- This page was entirely borrowed from demo..... -->

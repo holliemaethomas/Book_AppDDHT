@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="styles/layout.css">
+  <title>BOOKS</title>
+</head>
+
+<body>
+  <section id="formBox">
+    <h2 id="boxTitle">Enter your query below.</h2>
+    <form action="/show"  method="POST">
+      <input class="inputQueryHere" type="text" name="query" placeholder="title/author">
+        <label for="title">Title</label>
+      <input class="inputQueryHere" type="radio" name="searchType" value="title">
+        <label for="author">Author</label>
+      <input class="inputQueryHere" type="radio" name="searchType" value="author">
+      <button type="submit" id="button">Search</button>
+    </form>
+  </section>
+  <main>
+
+  </main>
+
+</body>
+
+</html>
