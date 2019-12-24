@@ -35,6 +35,8 @@ function Book(bookObject) {
   this.authors = bookObject.volumeInfo.authors;
   this.description = bookObject.volumeInfo.description;
   this.image_url = bookObject.volumeInfo.imageLinks && bookObject.volumeInfo.imageLinks.thumbnail;
+  this.book_ID = bookObject.id;
+  // console.log(bookObject.id);
 }
 
 app.get('/', (req, res) => {
@@ -58,13 +60,42 @@ app.post('/show', (req, res) => {
   superagent.get(`https://www.googleapis.com/books/v1/volumes?q=${req.body.searchType}+in${req.body.query}`)
     .then(data => {
       const books = data.body.items.map(book => new Book(book))
-      console.log(books)
+      console.log('BOOK URL',data.body.items)
       res.render('./pages/show', { books: books });
     })
     .catch(err => {
       errors(err, res)
     });
 })
+
+app.get('/books/:id', (req, res) => {
+
+  console.log(req.params.id);
+
+  //https://www.googleapis.com/books/v1/volumes/TH5uM_f0MRwC
+
+  // superagent.get(`https://www.googleapis.com/books/v1/volumes?q=${req.paramas.id}`)
+  //   .then(data => {
+  //     const books = data.body.items.map(book => new Book(book))
+  //     console.log(books)
+  //     res.render('./pages/details', { books: books });
+  //   })
+  //   .catch(err => {
+  //     errors(err, res)
+  //   });
+})
+
+// app.post('/add', (req, res) => {
+//   superagent.get(`https://www.googleapis.com/books/v1/volumes?q=${req.body.searchType}+in${req.body.query}`)
+//     .then(data => {
+//       const books = data.body.items.map(book => new Book(book))
+//       console.log(books)
+//       res.render('./pages/add', { books: books });
+//     })
+//     .catch(err => {
+//       errors(err, res)
+//     });
+// })
 
 // .then(data => data.body.items.map(book => new Book(book.volumeInfo)))
 //     console.log(book)
